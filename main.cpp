@@ -9,7 +9,6 @@ vector<bool> fillTheInformation(const string &ans);
 pi checkStrikeAndBall(const string *ans, const string &guess);
 string CreateRandomNumber();
 int main(){
-  string ans = CreateRandomNumber(); 
-  cout << "Answer is " << ans << '\n';
+  string ans = CreateRandomNumber();
   playGame(ans);
 }
