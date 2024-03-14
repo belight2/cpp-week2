@@ -18,12 +18,18 @@ pair<int,int> checkStrikeAndBall(const string &ans, const string &guess, vector<
 void playGame(const string &ans){
   string guess;
   vector<bool> isUsed = fillTheInformation(ans);
-  while(1){
+  bool flag = 0;
+  int count = 6;
+  while(--count){
+    cout << count << " chances left.\n";
     cout << "Enter a guess: ";
     cin >> guess;
     pair<int,int> cur = checkStrikeAndBall(ans, guess, isUsed);
-    if(cur.X == 3) break;
+    if(cur.X == 3){
+      flag = 1;
+      break;
+    }
     printCurrentState(cur);
   }
-  cout << "You win!";
+  (flag) ? cout << "You win!" : cout << "You lose!";
 }
