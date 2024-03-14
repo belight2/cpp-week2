@@ -11,3 +11,9 @@ vector<bool> fillTheInformation(const string &ans){
     res[ans[i] - '0'] = 1;
   return res;
 }
+string CreateRandomNumber(){
+  srand((unsigned int)time(NULL));
+  int number = 0;
+  number = rand()%900 + 100; // 100부터 999
+  return to_string(number);
+}

@@ -7,9 +7,9 @@ void playGame(const string &ans);
 void printCurrentState(const pi &cur);
 vector<bool> fillTheInformation(const string &ans);
 pi checkStrikeAndBall(const string *ans, const string &guess);
+string CreateRandomNumber();
 int main(){
-  string ans;
-  cout << "Enter a answer: ";
-  cin >> ans;
+  string ans = CreateRandomNumber(); 
+  cout << "Answer is " << ans << '\n';
   playGame(ans);
 }
