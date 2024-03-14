@@ -12,8 +12,14 @@ vector<bool> fillTheInformation(const string &ans){
   return res;
 }
 string CreateRandomNumber(){
+  // Fisher-Yates Shuffle Algorithm
   srand((unsigned int)time(NULL));
-  int number = 0;
-  number = rand()%900 + 100; // 100부터 999
-  return to_string(number);
+  vector<char> v;
+  for(int i = 0; i <= 9; i++) v.push_back(i+'0');
+  int sz = v.size();
+  for(int i = sz-1; i > 0; i--){
+    int j = rand() % (i+1);
+    swap(v[i], v[j]);
+  }
+  return string(v.begin(), v.begin()+3);
 }
